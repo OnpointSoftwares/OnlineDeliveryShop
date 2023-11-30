@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            color:black;
+            width: 100%;
+        }
+        .hero-section {
+            background: url('images/hero.jpg') center/cover no-repeat;
+            color:black;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .cta-button {
+            margin-top: 20px;
+        }
+        .product-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .product-category {
+            margin-top: 30px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onpoint Delivery Shop</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <header class="bg-dark text-white text-center p-3">
+        <h1>Onpoint Delivery Shop</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="FreshProduce.html">Fresh Produce</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ArduinoRentals.html">Arduino Rentals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="howItWorks.html">How It Works</a>
+                </li>
+                <li class="nav-item  active">
+                    <a class="nav-link " href="about.html">About Us<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero-section">
+        <h2>Welcome to Onpoint Delivery Shop</h2>
+        <p>Your one-stop solution for fresh produce and Arduino rentals</p>
+        <a href="#fresh-produce" class="btn btn-primary cta-button">Order Now</a>
+    </section>
+
+    <section class="product-section" id="fresh-produce">
+        <h2>Fresh Produce</h2>
+        <p>Locally sourced, high-quality fruits and vegetables</p>
+        <!-- Add your product cards or grid here -->
+        <div class="row">
+            <!-- Example card (repeat as needed) -->
+            <div class="col-md-4 product-category">
+                <img src="images/orange.jpeg" alt="Product Image" class="img-fluid">
+                <h4>Oranges</h4>
+                <p>Price: Ksh 60/ 5 Oranges</p>
+                <button class="btn btn-success">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section" id="arduino-rentals">
+        <h2>Arduino Rentals</h2>
+        <p>Rent the latest Arduino components for your projects</p>
+        <!-- Add your Arduino rental cards or grid here -->
+        <div class="row">
+            <!-- Example card (repeat as needed) -->
+            <div class="col-md-4 product-category">
+                <img src="images/irsensor.jpeg" alt="Arduino Component Image" class="img-fluid">
+                <h4>IR Sensor</h4>
+                <p>Rental Price: Ksh 50/day</p>
+                <button class="btn btn-success">Rent Now</button>
+            </div>
+             <div class="col-md-4 product-category">
+                <img src="images/irsensor.jpeg" alt="Arduino Component Image" class="img-fluid">
+                <h4>IR Sensor</h4>
+                <p>Rental Price: Ksh 50/day</p>
+                <button class="btn btn-success">Rent Now</button>
+            </div>
+             <div class="col-md-4 product-category">
+                <img src="images/irsensor.jpeg" alt="Arduino Component Image" class="img-fluid">
+                <h4>IR Sensor</h4>
+                <p>Rental Price: Ksh 50/day</p>
+                <button class="btn btn-success">Rent Now</button>
+            </div>
+            
+        </div>
+    </section>
+     <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
