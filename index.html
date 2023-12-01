@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
       <style>
         body {
             font-family: Arial, sans-serif;
@@ -143,7 +144,7 @@
             
         </div>
     </section>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chatModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chatModal" style="margin-bottom: 20%;margin-right: 20%;">
         Open Chat
     </button>
 
@@ -190,7 +191,7 @@
                 res=JSON.stringify(data.chatbot_response)
                 const chatBox = document.getElementById('chat-box');
                 chatBox.innerHTML += `<p>User: ${userInput}</p>`;
-                chatBox.innerHTML += `<p>DartMan: ${res}</p>`;
+                chatBox.innerHTML += `<p>DartMan: ${data.chatbot_response}</p>`;
 
                 // Clear the input field
                 document.getElementById('user-input').value = '';
