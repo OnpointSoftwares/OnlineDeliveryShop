@@ -72,9 +72,8 @@
           cache: false,
           success: function (html) {
           	console.log(html);
-            alert(html)
               if (html!="") {
-                  $('.row').addClass('alert alert-success').html(html).delay(500);
+                  $('.row').addClass('alert alert-success').html(html).delay(1000);
 
                   $btn.button('reset');
                   
