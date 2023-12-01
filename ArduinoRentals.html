@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onpoint Delivery Shop - Arduino Rentals</title>
     <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Custom CSS styles -->
     <style>
@@ -59,29 +60,39 @@
 
             <div class="row">
                 <!-- Example Arduino rental category (repeat as needed) -->
-                <div class="col-md-4 product-category">
-                    <img src="images/irsensor.jpeg" alt="Arduino Component Image" class="img-fluid">
-                    <h4>IR Sensor</h4>
-                    <p>Rental Price: Ksh 50/day</p>
-                    <button class="btn btn-success">Rent Now</button>
-                </div>
-                 <div class="col-md-4 product-category">
-                    <img src="images/irsensor.jpeg" alt="Arduino Component Image" class="img-fluid">
-                    <h4>IR Sensor</h4>
-                    <p>Rental Price: Ksh 50/day</p>
-                    <button class="btn btn-success">Rent Now</button>
-                </div>
-                 <div class="col-md-4 product-category">
-                    <img src="images/irsensor.jpeg" alt="Arduino Component Image" class="img-fluid">
-                    <h4>IR Sensor</h4>
-                    <p>Rental Price: Ksh 50/day</p>
-                    <button class="btn btn-success">Rent Now</button>
-                </div>
+               
             </div>
         </div>
     </section>
+<script>
+          $.ajax({
+          url: "http://localhost/OnpointDeliveryShop/serve.php", 
+          type: "POST",        
+          data: "confirm",     
+          cache: false,
+          success: function (html) {
+          	console.log(html);
+            alert(html)
+              if (html!="") {
+                  $('.row').addClass('alert alert-success').html(html).delay(500);
 
+                  $btn.button('reset');
+                  
+              } else {
+                  $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Message Sending Error! Please try again').delay(500).slideDown(500).delay(10000).slideUp('slow');
+                  $btn.button('reset');
+              }
+          },
+          error: function (a, b) {
+            /*if (b == 'error') {
+              $('#result-message').addClass('alert alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Error!</strong> Message Sending Error! Please try again').delay(500).slideDown(500).delay(10000).slideUp('slow');
+            };
+            $btn.button('reset');*/
+          }
+      });
+</script>
     <!-- Bootstrap JS and Popper.js -->
+   <script src="plugins/jquery-1.11.2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
