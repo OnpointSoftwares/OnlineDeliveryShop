@@ -23,17 +23,49 @@
         .product-category {
             margin-top: 30px;
         }
+        .header {
+            background-color: #007bff;
+            padding: 10px 0;
+        }
+        .logo {
+            max-height: 40px;
+        }
+        .login-link {
+            color: #fff;
+            margin-right: 20px;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onpoint Delivery Shop</title>
     <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
 
-    <header class="bg-dark text-white text-center p-3">
-        <h1>Onpoint Delivery Shop</h1>
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <!-- Logo -->
+                    <img src="images/logo.png" alt="Onpoint Delivery Shop" class="logo">
+                </div>
+                <div class="col-md-8 text-right">
+                    <!-- Login Link -->
+                    <h3>Onpoint Delivery Shop</h3>
+                    <a href="login.html" class="login-link">Login</a>
+                    <!-- Avatar -->
+                    <img src="images/avatar.jpg" alt="User Avatar" class="avatar">
+                </div>
+            </div>
+        </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -111,8 +143,45 @@
             
         </div>
     </section>
+    <script>
+        $(document).ready(function() {
+            // Check session on page load
+            checkSession();
+
+            // Check session button click event
+            $("#checkSessionBtn").on("click", function() {
+                checkSession();
+            });
+
+            // Logout button click event
+            $("#logoutBtn").on("click", function() {
+                logout();
+            });
+
+            function checkSession() {
+                // AJAX request to check session
+                $.ajax({
+                    url: "https://eminently-rare-pegasus.ngrok-free.app/OnpointDeliveryShop/check_session_ajax.php",
+                    type: "POST",
+                    success: function(response) {
+                        $(".login-link").html(response);
+                    }
+                });
+            }
+
+           /* function logout() {
+                // AJAX request to destroy session
+                $.ajax({
+                    url: "https://eminently-rare-pegasus.ngrok-free.app/OnpointDeliveryShop/logout_ajax.php",
+                    type: "POST",
+                    success: function(response) {
+                        $("#sessionInfo").html(response);
+                    }
+                })
+            }*/
+        });
+    </script>
      <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
